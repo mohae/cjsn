@@ -38,6 +38,6 @@ Unmarshal:
     
 ## Wishlist
 
-Unmarshal json, preserving map order.
-Marshal json, preserving map order.
+* Unmarshal json, preserving map order.  
+* Marshal json, preserving map order.  
 
