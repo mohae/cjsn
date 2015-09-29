@@ -8,7 +8,7 @@ Json doesn't support comments since machines don't really have a use for them an
 For now, that is all Ersatzjson does. 
 
 ## Comments
-[Nocomment](https://github.com/mohae/nocomment) is used to elide comments from the JSON. The remaining bytes are then unmarshaled into the passed interface{} by `encoding/json`. 
+[Nocomment](https://github.com/mohae/nocomment) is used to elide comments from the JSON. Once the comments have been elided, the resulting bytes are consistent with JSON as defined in RFC 4627 and are unmarshaled into the passed interface{} by `encoding/json`. 
 
 Ersatzjson supports both block comments and line comments.
 
@@ -35,7 +35,10 @@ Unmarshal:
         log.Error(err)
         return
     }
-    
+
+## Notes
+I use `cjsn` as the extension for JSON with comments.  While the actual extension for commented JSON files doesn't matter, it is recommended that it is not one of the common JSON extensions. Commented JSON isn't real JSON and using a JSON extension may cause problems or confusion.
+
 ## Wishlist
 
 * Unmarshal json, preserving map order.  
