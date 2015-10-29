@@ -1,3 +1,8 @@
+// Package ersatzjson supports json with comments.
+//
+// Currently, it only implements an Unmarshal, which accepts json as []byte and
+// elides any comments before unmarshaling.  Comments can be either line
+// comments, # and //, or block comments, /* */.
 package ersatzjson
 
 import (
@@ -6,6 +11,7 @@ import (
 	"github.com/mohae/nocomment"
 )
 
+// Decoder is a wrapper to json.Decoder
 type Decoder struct {
 	json.Decoder
 }
