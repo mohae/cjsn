@@ -52,7 +52,7 @@ func TestUnmarshal(t *testing.T) {
 			continue
 		}
 		if len(test.expected) != len(animals) {
-			t.Errorf("%d: expected %d results, go %d", len(test.expected), len(animals))
+			t.Errorf("%d: expected %d results, go %d", i, len(test.expected), len(animals))
 			continue
 		}
 		for i, v := range animals {
@@ -62,7 +62,7 @@ func TestUnmarshal(t *testing.T) {
 				continue
 			}
 			if test.expected[j].Order != v.Order {
-				t.Errorf("%d expected the order for %q to be %q, got %q", v.Name, test.expected[j].Order, v.Order)
+				t.Errorf("%d expected the order for %q to be %q, got %q", i, v.Name, test.expected[j].Order, v.Order)
 			}
 		}
 	}
