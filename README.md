@@ -1,5 +1,6 @@
 ersatzjson
 ==========
+[![Build Status](https://travis-ci.org/mohae/ersatzjson.png)](https://travis-ci.org/mohae/ersatzjson)
 
 Ersatzjson isn't really json, until it is. 
 
