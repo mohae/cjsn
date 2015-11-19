@@ -1,9 +1,9 @@
-// Package ersatzjson supports json with comments.
+// Package cjsn supports json with comments: commented json.
 //
 // Currently, it only implements an Unmarshal, which accepts json as []byte and
 // elides any comments before unmarshaling.  Comments can be either line
 // comments, # and //, or block comments, /* */.
-package ersatzjson
+package cjsn
 
 import (
 	"encoding/json"
