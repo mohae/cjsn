@@ -28,7 +28,7 @@ func TestUnmarshal(t *testing.T) {
 		expected    []Animal
 		expectedErr string
 	}{
-		{jsonBlob: []byte(""), expected: []Animal{}, expectedErr: "unexpected end of JSON input"},
+		{jsonBlob: []byte(""), expected: []Animal{}, expectedErr: "cjson: unmarshal: unexpected end of JSON input"},
 		// from http://golang.org/pkg/encoding/json/#example_Unmarshal
 		{jsonBlob: []byte(`[
       {"Name": "Platypus", "Order": "Monotremata"},

@@ -20,6 +20,7 @@ package cjson
 
 import (
 	"encoding/json"
+	"fmt"
 
 	"github.com/mohae/nocomment"
 )
@@ -32,7 +33,14 @@ type Decoder struct {
 // Unmarshal elides comments from the "json" and then calls
 // json.Unmarshal to unmarshal to the provided interface{}.
 func Unmarshal(data []byte, v interface{}) error {
-	data = nocomment.Clean(data)
-	err := json.Unmarshal(data, &v)
-	return err
+	var s nocomment.Stripper
+	data, err := s.Clean(data)
+	if err != nil {
+		return fmt.Errorf("cjson: remove comments: %s", err)
+	}
+	err = json.Unmarshal(data, &v)
+	if err != nil {
+		return fmt.Errorf("cjson: unmarshal: %s", err)
+	}
+	return nil
 }
