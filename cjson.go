@@ -40,7 +40,7 @@ func Unmarshal(data []byte, v interface{}) error {
 	}
 	err = json.Unmarshal(data, &v)
 	if err != nil {
-		return fmt.Errorf("cjson: unmarshal: %s", err)
+		return err
 	}
 	return nil
 }
